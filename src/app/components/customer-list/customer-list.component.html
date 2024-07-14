@@ -1,0 +1,26 @@
+<!-- src/app/components/customer-list/customer-list.component.html -->
+<div class="container mt-3">
+  <h2>Customer Transactions</h2>
+  <div class="form-group">
+    <label for="customerSelect">Select Customer</label>
+    <select id="customerSelect" class="form-control" (change)="onCustomerChange($event)">
+      <option *ngFor="let customer of customers" [value]="customer.id">{{ customer.name }}</option>
+    </select>
+  </div>
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Date</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of filteredTransactions">
+        <td>{{ transaction.id }}</td>
+        <td>{{ transaction.date }}</td>
+        <td>{{ transaction.amount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,5 @@
+<!-- src/app/app.component.html -->
+<div class="container mt-3">
+  <app-customer-list (customerSelected)="onCustomerSelected($event)"></app-customer-list>
+  <app-transaction-graph [customerId]="selectedCustomerId"></app-transaction-graph>
+</div>
